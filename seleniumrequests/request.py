@@ -220,10 +220,5 @@ class RequestsSessionMixin(object):
             self.add_cookie(cookie_dict)
 
         # Don't keep cookies in the Requests session, only use the WebDriver's
-        self.requests_session.cookies.clear()
-        if opened_window_handle:
-            self.close()
-        if original_window_handle:
-            self.switch_to.window(original_window_handle)
 
         return response
